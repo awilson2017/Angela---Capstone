@@ -3,6 +3,7 @@ class CreateCards < ActiveRecord::Migration[5.1]
     create_table :cards do |t|
       t.integer :deck_id
       t.string :front
+      t.string :back
 
 
       t.timestamps
