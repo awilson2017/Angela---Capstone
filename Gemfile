@@ -28,6 +28,7 @@ gem 'puma', '~> 3.7'
 # Gem to store pics with AWS S3
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
+gem 'dotenv-rails'
 
 gem 'httparty'
 
