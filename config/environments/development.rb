@@ -45,15 +45,15 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  # Set up for Paperclip
+  # Set up for Paperclip - tutorial had both :bucket and :s3_region in :s3_credentials. These need to be moved outisde on the same level as :s3_credentials
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
     },
-    :bucket => 'korean-app',
-    :s3_region => 'us-west-2',
+    :bucket => 'korean-app', # or ENV['S3_BUCKET_NAME']
+    :s3_region => 'us-west-2', # or ENV['AWS_REGION']
     :url => ':s3_domain_url',
     :path => "/:class/:attachment/:id_partition/:style/:filename"
   }
